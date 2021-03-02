@@ -22,7 +22,7 @@ if (process.env.NODE_ENV == 'development') {
 app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
-//to include own css files pictures and stuff we have to create accessible folder for the application
+// to include own css files pictures and stuff we have to create accessible folder for the application
 // create a folder which is static folder
 app.use(express.static(path.join(__dirname, 'public')))
 

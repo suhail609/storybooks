@@ -1,0 +1,11 @@
+p{
+    margin: 10px 0 !important
+}
+/* !important is used to override anything in matierlize */
+
+
+.login-container {
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}

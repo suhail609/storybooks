@@ -4,8 +4,10 @@ const router = express.Router();
 //@desc   login/landig page
 //@route GET /
 
+
+//explicitly set layout to ligin.hbs
 router.get('/', (req, res) => {
-    res.render('login')
+    res.render('login', {layout: 'login'})
 })
 
 //@desc   Dashboard
