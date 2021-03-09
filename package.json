@@ -10,11 +10,11 @@
   "author": "suhail",
   "license": "MIT",
   "dependencies": {
-    "connect-mongo": "^4.2.0",
+    "connect-mongo": "^4.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.1",
-    "express-sessions": "^1.0.6",
+    "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
     "mongoose": "^5.11.15",

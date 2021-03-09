@@ -16,8 +16,13 @@
     <title>Story Books</title>
 </head>
 <body>
+    {{> _header}}
     <div class="container">
     {{{body}}}
     </div>
+
+    <script>
+        M.Sidenav.init(document.querySelector('.sidenav'));
+    </script>
 </body>
 </html>
