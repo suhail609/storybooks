@@ -33,8 +33,17 @@ if (process.env.NODE_ENV == 'development') {
     app.use(morgan('dev'));
 }
 
-//set handlebars with .hbs
-app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs'}));
+
+// Handlebars Helpers
+const { formatDate, stripTags, truncate, editIcon } = require('./helpers/hbs');
+
+//set handlebars with .hbs and include helpers
+app.engine('.hbs', exphbs({ helpers: {
+  formatDate,
+  stripTags,
+  truncate,
+  editIcon
+}, defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 //session
@@ -53,6 +62,12 @@ app.use(session({
 //set Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Set global variable
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null
+  next()
+})
 
 // to include own css files pictures and stuff we have to create accessible folder for the application
 // create a folder which is static folder
